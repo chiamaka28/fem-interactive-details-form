@@ -23,6 +23,9 @@ const config: Config = {
     firstGradient : "hsl(249, 99%, 64%)",
     secondGradient : "hsl(278, 94%, 30%)"
    },
+   fontFamily:  {
+    sans: ['var(--font-spaceGrotesk)']
+  },
   },
   plugins: [],
 };

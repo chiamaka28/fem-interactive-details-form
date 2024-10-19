@@ -2,32 +2,9 @@
 
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { LogoIcon } from '../icon';
 import Success from '../Success';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-
-// interface Props {
-//   schema: any;
-//   formData: {
-//     cardholderName: string;
-//     cardNumber: string;
-//     cardDate: {
-//       month: string;
-//       year: string;
-//     };
-//     cvc: string;
-//   };
-//   handleSubmit: (data: {
-//     cardholderName: string;
-//     cardNumber: string;
-//     cardDate: {
-//       month: string;
-//       year: string;
-//     };
-//     cvc: string;
-//   }) => void;
-// }
 
 interface CardDate {
   month: string;
@@ -101,16 +78,16 @@ const Form: React.FC = () => {
             </div>
           </div>
           <div className=' relative -translate-y-10  -translate-x-8 md:-translate-x-12 lg:-translate-x-20 flex justify-center '>
-            <div className='absolute w-2 top-4 left-5 z-30'>
-              <LogoIcon />
+            <div className='absolute w-14 lg:w-16 top-4  left-5 z-30'>
+              <img src='/card-logo.svg' alt='card-logo' />
             </div>
             <img
               src='/bg-card-front.png'
               className='w-[280px] sm:w-[320px] lg:w-[400px]  '
               alt='front-card'
             />
-            <div className='absolute bottom-7 w-[85%] left-5 text-white lg:flex lg:flex-col lg:gap- '>
-              <p className='lg:tracking-[3px] text-lg  w-full'>
+            <div className='absolute bottom-7   text-white lg:flex lg:flex-col lg:items-center  '>
+              <p className='lg:tracking-[20px] tracking-wider text-lg  w-full lg:absolute lg:bottom-10 text-center'>
                 {formattedCardNumber}
               </p>
               <div className='flex justify-between'>
@@ -145,7 +122,7 @@ const Form: React.FC = () => {
                 placeholder='e.g. Jane Appleseed'
                 id='cardholderName'
                 {...register('cardholderName')}
-                className={`block border border-lightGrayishViolet focus:border  px-4 my-1  h-10 w-full rounded-lg focus:outline-none focus:border-gradient-to-r focus:from-firstGradient focus:to-secondGradient `}
+                className={`block border border-lightGrayishViolet focus:border  px-4 my-1  h-10 w-full rounded-lg focus:outline-none  `}
               />
               <span className='text-xs text-red'>
                 {errors.cardholderName?.message}
@@ -169,12 +146,12 @@ const Form: React.FC = () => {
                 {errors.cardNumber?.message}
               </span>
             </div>
-            <div className='flex gap-4 '>
+            <div className='flex gap-4 items-center mt-2'>
               <fieldset className='basis-1/2'>
-                <legend className='text-darkViolet text-sm mt-2 font-medium '>
+                <legend className='text-darkViolet text-sm   font-medium '>
                   Exp. Date (MM/YY)
                 </legend>
-                <div className='flex my-1 gap-2'>
+                <div className='flex   gap-2 '>
                   <input
                     type='text'
                     placeholder='MM'
@@ -187,7 +164,7 @@ const Form: React.FC = () => {
                     placeholder='YY'
                     id='expDate'
                     {...register('cardDate.year')}
-                    className={`block border border-lightGrayishViolet focus:border px-4  h-10 w-1/2 rounded-lg focus:outline-none`}
+                    className={`block border border-lightGrayishViolet focus:border px-4   h-10 w-1/2 rounded-lg focus:outline-none`}
                   />
                 </div>
                 {errors.cardDate && (
@@ -197,10 +174,10 @@ const Form: React.FC = () => {
                   </p>
                 )}
               </fieldset>
-              <div className='basis-1/2'>
+              <div className='basis-1/2 '>
                 <label
                   htmlFor='cvc'
-                  className='text-darkViolet text-sm mt-2 font-medium'
+                  className='text-darkViolet text-sm  font-medium'
                 >
                   CVC
                 </label>
@@ -209,7 +186,7 @@ const Form: React.FC = () => {
                   placeholder=' e.g. 123'
                   id='cvc'
                   {...register('cvc')}
-                  className={`block border border-lightGrayishViolet focus:border px-4 my-1 h-10 w-full  grow rounded-lg focus:outline-none`}
+                  className={`block border border-lightGrayishViolet focus:border px-4  h-10 w-full  rounded-lg focus:outline-none`}
                 />
                 {errors.cvc && (
                   <span className='text-red text-xs'>
