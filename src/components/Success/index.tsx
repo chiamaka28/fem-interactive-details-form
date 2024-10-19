@@ -6,7 +6,7 @@ const Success = () => {
       <div className='flex flex-col gap-4 items-center justify-center '>
         <SuccessIcon />
         <h2>THANK YOU!</h2>
-        <p>We've added your card details</p>
+        <p>We&apos;ve added your card details</p>
         <button className='w-full h-12 text-center bg-darkViolet text-white rounded-lg my-5'>
           <p>Continue</p>
         </button>
