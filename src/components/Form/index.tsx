@@ -87,10 +87,10 @@ const Form: React.FC = () => {
               alt='front-card'
             />
             <div className='absolute bottom-7   text-white lg:flex lg:flex-col lg:items-center  '>
-              <p className='lg:tracking-[20px] tracking-wider text-lg  w-full lg:absolute lg:bottom-10 text-center'>
+              <p className='lg:tracking-[3px] tracking-wider text-lg  w-full lg:bottom-12 '>
                 {formattedCardNumber}
               </p>
-              <div className='flex justify-between'>
+              <div className='flex justify-between w-full'>
                 <p>{watch('cardholderName') || 'Jane Appleseed'}</p>
                 <p>
                   {expiryMonth && expiryYear
